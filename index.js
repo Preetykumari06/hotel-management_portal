@@ -4,10 +4,12 @@ const { ownerRouter } = require("./Routes/owner.routes")
 const { hotelRouter } = require("./Routes/hotel.routes")
 const {auth}=require("./Middleware/auth.middleware")
 const { limiter } = require("./Middleware/rateLimiter.middleware")
+const bodyParser = require('body-parser')
 require('dotenv').config()
 
 const app=express()
 app.use(express.json())
+app.use(bodyParser.json())
 
 app.use("/owners",ownerRouter)
 app.use("/hotels",hotelRouter)

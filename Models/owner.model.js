@@ -8,10 +8,17 @@ const ownerSchema=mongoose.Schema({
     age: Number,
     city: String,
 })
-
 const ownerModel=mongoose.model("owner",ownerSchema)
 
 
+const blacklistTokenSchema=new mongoose.Schema({
+    token:String,
+})
+
+const BlacklistToken=mongoose.model("BlacklistToken",blacklistTokenSchema)
+
+
 module.exports={
-    ownerModel
+    ownerModel,
+    BlacklistToken
 }
